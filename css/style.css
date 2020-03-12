@@ -1,0 +1,322 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+
+/* Reset page */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+button, input, hr{
+    outline: none;
+}
+
+
+/**********************************************************************/
+
+
+/* Styling Page */
+body {
+    font-family: '微軟正黑體', 'Microsoft JhengHei';
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.wrap {
+    width: 1024px;
+    margin: 0 auto;
+}
+.header{
+    background: url(../img/the-urban-landscape-1698285.png) no-repeat;
+    height: 380px;
+    text-align: center;
+    margin-bottom: 100px;
+}
+.header h1{
+    font-size: 40px;
+    color: #FFFFFF;
+    letter-spacing: 3.89px;
+    padding-top: 80px;
+    margin-bottom: 60px;
+}
+.selectRegion{
+    padding-top: 20px;
+    font-size: 16pt;
+    font-weight: bold;
+}
+.selectRegion select{
+    width: 452px;
+    height: 48px;
+    background: rgba(255,255,255,0.70);
+    border: 3px solid #FFFFFF;
+    border-radius: 5px;
+    padding: 3px 2px;
+}
+.hotspot{
+    width: 800px;
+    height:112px;
+    background: #FFFFFF;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.20);
+    border-radius: 5px;
+    margin: 85px auto 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.hotspot h3{
+    flex: 0 0 100%;
+    font-size: 18px;
+    color: #000000;
+    padding-top: 15px;
+    text-align: left;
+    margin-left: 20px;
+    display: flex;
+}
+.hotspot button{
+    flex: 0 0 20%;
+    border-radius: 5px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    margin-left: 15px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+    outline: none;
+    border: none;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+    transition-duration: 300ms;
+}
+.hotspot button:focus{
+    outline: none;
+}
+.hotspot button:active{
+    color: #000000;
+}
+.hotspot button:hover{
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 5px 12px 0 rgba(0, 0, 0, 0.19);
+    transform: scale(1.02);
+    transition-duration: 300ms;
+}
+.purple{
+    background-color: #8A82CC;
+}
+.orange{
+    background: #FFA782;
+}
+.yellow{
+    background: #F5D105;
+}
+.blue{
+    background: #559AC8;
+}
+.main{
+    padding: 40px 10px 10px;
+    position: relative;
+}
+.main hr{
+    display: block;
+    border: 1.5px dashed #559AC8;
+    border-bottom: 0;
+}
+.iconbox{
+    position: absolute;
+    left: 500px;
+    top: 45px;
+    width: 23px;
+    height: 23px;
+    border: 1px solid #559AC8;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+}
+.icon {
+    display: inline-block;
+    width: 40px; height: 20px;
+    overflow: hidden;
+}
+.icon-del {
+    background: url(../img/icons_down.png) no-repeat center;
+}
+.icon > .icon {
+    position: relative;
+    left: -20px;
+    border-right: 20px solid transparent;
+    -webkit-filter: drop-shadow(rgb(85, 154, 200) 20px 0);
+    filter: drop-shadow(rgb(85, 154, 200) 20px 0);
+}
+.main h1{
+    margin: 50px 0 10px 0;
+    text-align: center;
+    font-size: 36px;
+    color: #8A82CC;
+}
+
+.card {
+    width: 464px;
+    height: 340px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 25px;
+    margin: 25px 18px;
+    float: left;
+    transition-duration: 300ms;
+    position: relative;
+    font-size: 16px;
+    color: #000000;
+}
+.card:hover{
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 25px 0 rgba(0, 0, 0, 0.19);
+    transform: scale(1.05);
+    transition-duration: 300ms;
+}
+.picture{
+    height: 155px;
+}
+.spotname{
+    width: 461px;
+    height: 52px;
+    background-image: linear-gradient(-180deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.54) 100%);
+    position: absolute;
+    top: 103px;
+}
+.spotname h4{
+    padding-top: 17px;
+    padding-left: 10px;
+    font-size: 24px;
+    color: #FFFFFF;
+    float: left;
+}
+.spotname h5{
+    padding-top: 25px;
+    padding-right: 10px;
+    font-size: 16px;
+    color: #FFFFFF;
+    float: right;
+}
+.footer{
+    height: 90px;
+    text-align: center;
+    background: #559AC8;
+}
+.footer H2{
+    padding-top: 25px;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+.footer H3{
+    font-size: 14px;
+    color: #FFD366;
+}
+.clearfix:after{
+	content: "";
+	display: table;
+	clear: both;
+}
+.flex-container{
+    width: 464px;
+    padding: 10px;
+    position: absolute;
+    top: 155px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: absolute;
+    bottom: 10px;
+}
+.item{
+    flex: 0 0 40%;
+    margin: 5px;
+    display: flex;
+    font-size: 1rem;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+
+.item2{
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 80%;
+}
+.item3{
+    flex: 0 0 40%;
+    display: flex;
+}
+.item3 img{
+    padding:0 2px;
+}
+.item span{
+    padding-left: 5px;
+}
+.pagination{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+.pagination a{
+    color: #559AC8;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid white;
+}
+.pagination a:hover{
+    text-decoration: none;
+    color: #FFFFFF;
+    background-color: #559AC8;
+}
+.pagination a:active{
+    border: 1px solid #559AC8;
+    color: #559AC8;
+    background-color: #FFFFFF;
+}
+.pagination a.selected{
+    text-decoration: none;
+    color: #FFFFFF;
+    background-color: #559AC8;
+}
