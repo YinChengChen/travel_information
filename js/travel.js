@@ -62,29 +62,26 @@ loadData(travelUrl).then(function (response) {
     }, false);
     //熱門行政區
     let hotspotNode = document.querySelector(".hotspot");
-    let hotspotButtonNode = hotspotNode.getElementsByTagName("button");
-    //console.log(hotspotButtonNode);
-    for (let j = 0; j < hotspotButtonNode.length; j++){
-        hotspotButtonNode[j].addEventListener("click", function () {
-            //console.log("text: ", event.currentTarget.textContent);
-            let keyZone = event.currentTarget.textContent;
+    hotspotNode.addEventListener("click", function(e){
+        if (e.target.nodeName !== "BUTTON"){
+            return;
+        }else{
+            console.log(e.target.nodeName, e.target.textContent);
+            let keyZone = e.target.textContent;
             let ZoneTitle = document.getElementById("zoneTitle");
             ZoneTitle.textContent = keyZone + "景點";
             let selectionData = [];
-            data.forEach(function (element) {
-                //console.log(value, index);
-                if (element.Zone === keyZone) {
+            data.forEach(function (element){
+                if(element.Zone === keyZone){
                     return selectionData.push(element);
                 }
             });
-            //console.log('data length:', selectionData.length);
             pageSet(selectionData.length);
             selectionPageIndex(selectionData);
             //顯示查詢地點
             displayOfSpot(selectionData);
-        }, false);
-    }
-
+        }
+    }, false);
 }, function (error) {
     console.log(Error);
 });
