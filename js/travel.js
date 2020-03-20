@@ -1,4 +1,4 @@
-var data = [];
+let data = [];
 let travelUrl = "https://data.kcg.gov.tw/api/action/datastore_search?resource_id=92290ee5-6e61-456f-80c0-249eae2fcc97";
 
 
@@ -16,7 +16,7 @@ loadData(travelUrl).then(function (response) {
     selectionPageIndex(data);
     displayOfSpot(data.slice(0, 10));
     //取得地區清單
-    for (var i = 0; i < data.length; i++) {
+    for(let i = 0; i < data.length; i++) {
         //console.log(data[i].Zone);
         // 避免地區重複
         tmplist.push(data[i].Zone);
@@ -124,7 +124,7 @@ function pageSet(dataLength) {
         let numberNode = document.createElement("A");
         numberNode.textContent = n + 1;
         //刷新地點都顯示第一頁
-        if (n == 0) {
+        if (n === 0) {
             numberNode.setAttribute("class", "selected");
         }
         numberNode.setAttribute("href", "#here");
