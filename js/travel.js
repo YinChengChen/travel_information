@@ -9,27 +9,27 @@ loadData(travelUrl).then(function (response) {
     //console.log(dataJson);
     tmpData = JSON.parse(dataJson);
     data = tmpData.result.records;
-    let regionList = [];
-    let tmplist = [];
     //console.log('data length:', data.length);
     pageSet(data.length, "0");
     selectionPageIndex(data);
     displayOfSpot(data.slice(0, 10));
     //取得地區清單
-    for(let i = 0; i < data.length; i++) {
-        //console.log(data[i].Zone);
-        // 避免地區重複
-        tmplist.push(data[i].Zone);
-        regionList = tmplist.filter(function (element, index, arr) {
-            return arr.indexOf(element) === index;
-        });
+    let regionList = [];
+    for(let i=0; i < data.length;i++){
+        regionList.push(data[i].Zone);
     }
+    let tmplist = [];
+    regionList.forEach(function(value){
+        if(tmplist.indexOf(value) == -1){
+            tmplist.push(value);
+        }
+    });
     //console.log(tmplist);
     //建立清單
     let selection = document.getElementById('regionList');
-    for (let j = 0; j < regionList.length; j++) {
+    for (let j = 0; j < tmplist.length; j++) {
         let option = document.createElement('OPTION');
-        option.textContent = regionList[j];
+        option.textContent = tmplist[j];
         selection.appendChild(option);
     }
     //選擇地區->顯示該地區前10筆資料
